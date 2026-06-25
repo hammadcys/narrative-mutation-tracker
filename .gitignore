@@ -1,0 +1,60 @@
+# Environment & secrets
+.env
+*.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+wheels/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-link
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# ChromaDB vector store (auto-rebuilt on first run)
+chroma_store/
+
+# Raw article cache (auto-rebuilt on each pipeline run)
+data/articles_raw.json
+
+# Streamlit runtime
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Distribution / packaging
+MANIFEST
