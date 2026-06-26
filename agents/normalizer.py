@@ -23,8 +23,6 @@ def normalize_claim(raw_claim: str) -> list[str]:
 
 Generate exactly 3 broad, 1-to-3 word search queries to find news articles about this claim.
 IMPORTANT: Do NOT write full sentences. Use extremely broad, simple keywords (e.g., "PTA ATM", "submarine cable", "internet shutdown").
-Focus on Pakistani and South Asian media coverage.
-Focus on Pakistani and South Asian media coverage.
 Return ONLY a valid JSON object with a single key "queries" containing an array of 3 strings.
 
 Example output: {{"queries": ["pakistan blackout", "power failure", "cyberattack rumors"]}}"""
