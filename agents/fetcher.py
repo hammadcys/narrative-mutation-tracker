@@ -217,6 +217,10 @@ def deduplicate(articles: list[dict]) -> list[dict]:
             continue
         if title and title in seen_titles:
             continue
+            
+        # Filter out Indian domains to keep the focus on Pakistan/Global news
+        if ".in/" in url or "amarujala" in url or "indiatimes" in url or "hindustantimes" in url or "ndtv" in url:
+            continue
 
         seen_urls.add(url)
         if title:
