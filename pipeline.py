@@ -104,8 +104,8 @@ if __name__ == "__main__":
     import json
 
     result = run_pipeline(
-        claim="Imran Khan arrested May 2023",
-        date_from="2023-05-09",
-        date_to="2023-05-25",
+        claim="PTA shutting down ATMs and mobile networks due to submarine cable cut",
+        date_from="2022-10-15",
+        date_to="2022-10-30",
     )
     print(json.dumps(result, indent=2, default=str))

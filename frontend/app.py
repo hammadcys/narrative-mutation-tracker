@@ -49,32 +49,32 @@ def e(text) -> str:
 
 EXAMPLES = [
     {
-        "tag": "Political",
-        "claim": "Imran Khan arrested May 2023",
-        "date_from": "2023-05-09",
-        "date_to": "2023-05-25",
-        "why": "High narrative drift — origin vs 'abduction' framing",
+        "tag": "Public Health",
+        "claim": "Polio vaccine causing illnesses in school children",
+        "date_from": "2019-04-20",
+        "date_to": "2019-05-10",
+        "why": "Tracks how localized panic escalated into nationwide health misinformation",
     },
     {
-        "tag": "Elections",
-        "claim": "2024 Pakistan election results rigged",
-        "date_from": "2024-02-08",
-        "date_to": "2024-02-25",
-        "why": "ARY/Geo divergence + international pickup",
+        "tag": "Infrastructure",
+        "claim": "Nationwide power blackout caused by foreign cyberattack",
+        "date_from": "2023-01-22",
+        "date_to": "2023-01-30",
+        "why": "Shows drift from factual grid failure to speculative sabotage theories",
     },
     {
-        "tag": "Economy",
-        "claim": "Pakistan IMF deal 2023",
-        "date_from": "2023-06-01",
-        "date_to": "2023-07-15",
-        "why": "Multiple credible sources, moderate drift",
+        "tag": "Technology",
+        "claim": "PTA shutting down ATMs and mobile networks due to submarine cable cut",
+        "date_from": "2022-10-15",
+        "date_to": "2022-10-30",
+        "why": "Factual internet slowdown mutates into financial shutdown panic",
     },
 ]
 
 
 
 st.set_page_config(
-    page_title="Misinformation Trail Tracker",
+    page_title="Narrative Mutation Tracker",
     page_icon="🔍",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -214,7 +214,7 @@ hr { border-color: #222 !important; }
 </style>
 <div class="masthead">
   <div class="masthead-label">South Asian Media Intelligence</div>
-  <div class="masthead-title">Misinformation Trail Tracker</div>
+  <div class="masthead-title">Narrative Mutation Tracker</div>
   <div class="masthead-deck">Enter any claim. See where it started, how it spread, and what changed along the way — traced across Pakistani and South Asian news sources.</div>
 </div>
 """, unsafe_allow_html=True)

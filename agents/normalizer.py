@@ -21,11 +21,12 @@ def normalize_claim(raw_claim: str) -> list[str]:
     client = _get_client()
     prompt = f"""A user entered this claim: "{raw_claim}"
 
-Generate exactly 3 clean, specific search queries to find news articles about this claim.
+Generate exactly 3 broad, 1-to-3 word search queries to find news articles about this claim.
+IMPORTANT: Do NOT write full sentences. Use extremely broad, simple keywords (e.g., "Pakistan blackout", "polio vaccine", "PTA internet").
 Focus on Pakistani and South Asian media coverage.
-Return ONLY a valid JSON array of 3 strings. No explanation, no markdown, no code fences.
+Return ONLY a valid JSON object with a single key "queries" containing an array of 3 strings.
 
-Example output: ["query one", "query two", "query three"]"""
+Example output: {{"queries": ["pakistan blackout", "power failure", "cyberattack rumors"]}}"""
 
     for attempt in range(2):
         try:
@@ -34,13 +35,12 @@ Example output: ["query one", "query two", "query three"]"""
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
                 max_tokens=200,
+                response_format={"type": "json_object"},
             )
             text = response.choices[0].message.content.strip()
-
-            text = re.sub(r"^```json\s*", "", text)
-            text = re.sub(r"^```\s*", "", text)
-            text = re.sub(r"\s*```$", "", text).strip()
-            queries = json.loads(text)
+            
+            parsed = json.loads(text)
+            queries = parsed.get("queries", [])
             if isinstance(queries, list) and len(queries) >= 1:
                 return [str(q) for q in queries[:3]]
         except Exception as e:
