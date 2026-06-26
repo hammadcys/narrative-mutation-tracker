@@ -21,8 +21,9 @@ def normalize_claim(raw_claim: str) -> list[str]:
     client = _get_client()
     prompt = f"""A user entered this claim: "{raw_claim}"
 
-Generate exactly 3 broad, 1-to-3 word search queries to find news articles about this claim.
-IMPORTANT: Do NOT write full sentences. Use extremely broad, simple keywords (e.g., "Pakistan blackout", "polio vaccine", "PTA internet").
+Generate exactly 3 broad, 2-to-3 word search queries to find news articles about this claim.
+CRITICAL RULE: You MUST include the country name (e.g., "Pakistan") in EVERY single query. Otherwise, acronyms like "PTA" will fetch unrelated news from other countries (like Parent Teacher Associations). 
+IMPORTANT: Do NOT write full sentences. Use extremely broad, simple keywords.
 Focus on Pakistani and South Asian media coverage.
 Return ONLY a valid JSON object with a single key "queries" containing an array of 3 strings.
 
