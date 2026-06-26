@@ -63,11 +63,11 @@ EXAMPLES = [
         "why": "Shows drift from factual grid failure to speculative sabotage theories",
     },
     {
-        "tag": "Technology",
-        "claim": "PTA shutting down ATMs and mobile networks due to submarine cable cut",
-        "date_from": "2022-10-15",
-        "date_to": "2022-10-30",
-        "why": "Factual internet slowdown mutates into financial shutdown panic",
+        "tag": "Public Health",
+        "claim": "Polio vaccine causing illnesses in school children in Pakistan",
+        "date_from": "2019-04-20",
+        "date_to": "2019-05-10",
+        "why": "Tracks how localized panic escalated into nationwide health misinformation",
     },
 ]
 
